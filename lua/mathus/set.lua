@@ -20,8 +20,6 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -32,6 +30,7 @@ vim.opt.colorcolumn = "100"
 
 vim.g.mapleader = " "
 
-
-
-
+vim.opt.background = "light"
+vim.cmd([[highlight LineNrAbove guifg=#a89984]])
+vim.cmd([[highlight LineNrBelow guifg=#a89984]])
+vim.cmd([[highlight LineNr guifg=#af3a03]])
