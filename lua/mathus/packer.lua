@@ -1,4 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- if err != nil {
+    -- return err
+    -- }
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -13,34 +16,29 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
---  use ({
---	  'thedenisnikulin/vim-cyberpunk',
---	  as = 'cyberpunk',
---	  config = function()
---		  vim.cmd('colorscheme cyberpunk')
---	  end
---  })
-
---  use ({
---      'comfysage/evergarden',
---      as = 'evergarden',
---      config = function()
---          vim.cmd('colorscheme evergarden')
---      end
---  })
-
   use {
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
   }
 
-  use ({
-      'morhetz/gruvbox',
-      as = 'gruvbox', 
+
+  use({
+      'projekt0n/github-nvim-theme',
       config = function()
-          vim.cmd('colorscheme gruvbox')
+          vim.cmd('colorscheme github_dark_default')
       end
   })
+
+  use {
+      "kyazdani42/nvim-tree.lua",
+      requires = "kyazdani42/nvim-web-devicons" ,
+      wants = "nvim-web-devicons",
+  }
+
+  use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+  }
 
   use { 'nvim-treesitter/playground' }
   use { 'ThePrimeagen/harpoon' }
