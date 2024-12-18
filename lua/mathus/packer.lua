@@ -35,6 +35,13 @@ return require('packer').startup(function(use)
       branch = 'v2', -- optional but strongly recommended
   }
 
+  use {
+      "danymat/neogen",
+      config = function()
+          require('neogen').setup {}
+      end,
+  }
+
   use { 'nvim-treesitter/playground' }
   use { 'ThePrimeagen/harpoon' }
   use { 'mbbill/undotree' }
@@ -42,7 +49,6 @@ return require('packer').startup(function(use)
   use { 'ThePrimeagen/vim-be-good' }
   use { 'vim-airline/vim-airline-themes' }
   use { 'vim-airline/vim-airline' }
-
   use {
       'VonHeikemen/lsp-zero.nvim',
       requires = {
@@ -51,6 +57,8 @@ return require('packer').startup(function(use)
           {'williamboman/mason-lspconfig.nvim'},
 
           {'hrsh7th/nvim-cmp'},
+          {'prabirshrestha/vim-lsp'},
+          {'mattn/vim-lsp-settings'},
           {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-path'},
           {'saadparwaiz1/cmp_luasnip'},
